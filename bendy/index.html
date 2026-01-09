@@ -2,11 +2,11 @@
 <html lang="en-us">
 
 <head>
-  <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/bendy/">
+    <base href="https://cdn.jsdelivr.net/gh/marty-games/mga-unity@main/bendy-and-the-ink-machine/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Unity WebGL Player | OldCh2RippedTwo</title>
+    <title>Bendy and the Ink Machine</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <style>
         * {
@@ -94,7 +94,7 @@
         ]).then(([dataUrl]) => {
             window.dataUrll = dataUrl;
             var json = {
-                "companyName": "DefaultCompany",
+                "companyName": "Marty Games",
                 "productName": "OldCh2RippedTwo",
                 "productVersion": "1.0",
                 "dataUrl": "BATIM.data.unityweb",
@@ -119,7 +119,7 @@
                 onProgress: UnityProgress,
                 url: blobUrl,
                 Module: {
-                    onRuntimeInitialized: function () {
+                    onRuntimeInitialized: function() {
                         resizeUnityContainer();
                         document.querySelector("#loading-text").remove();
                     }
@@ -131,7 +131,7 @@
 
 <body>
     <div class="webgl-content">
-      <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
+        <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
         <div id="unityContainer"></div>
     </div>
 </body>
