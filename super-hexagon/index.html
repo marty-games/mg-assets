@@ -1,6 +1,9 @@
+<!-- Ported by Martin_MMC -->
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
+    <base href="https://cdn.jsdelivr.net/gh/marty-games/mga-unity@main/super-hexagon/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Super Hexagon</title>
@@ -9,12 +12,16 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {
+            onProgress: UnityProgress
+        });
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="webgl-content">
-      <div id="unityContainer"></div> 
+        <div id="unityContainer"></div>
     </div>
-  </body>
-</html> 
+</body>
+
+</html>
