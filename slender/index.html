@@ -2,11 +2,11 @@
 <html lang="en-us">
 
 <head>
-    <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@main/slender/">
+    <base href="https://cdn.jsdelivr.net/gh/marty-games/mga-unity@main/slender/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Unity WebGL Player | Slender</title>
+    <title>Slender</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <style>
         * {
@@ -94,18 +94,20 @@
         ]).then(([dataUrl]) => {
             window.dataUrll = dataUrl;
             var json = {
-"companyName": "Parsec Productions",
-"productName": "Slender",
-"dataUrl": dataUrl,
-"asmCodeUrl": "Build.asm.code.unityweb",
-"asmMemoryUrl": "Build.asm.memory.unityweb",
-"asmFrameworkUrl": "Build.asm.framework.unityweb",
-"TOTAL_MEMORY": 268435456,
-"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
-"webglContextAttributes": {"preserveDrawingBuffer": false},
-"splashScreenStyle": "Dark",
-"backgroundColor": "#000000"
-};
+                "companyName": "Parsec Productions",
+                "productName": "Slender",
+                "dataUrl": dataUrl,
+                "asmCodeUrl": "Build.asm.code.unityweb",
+                "asmMemoryUrl": "Build.asm.memory.unityweb",
+                "asmFrameworkUrl": "Build.asm.framework.unityweb",
+                "TOTAL_MEMORY": 268435456,
+                "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+                "webglContextAttributes": {
+                    "preserveDrawingBuffer": false
+                },
+                "splashScreenStyle": "Dark",
+                "backgroundColor": "#000000"
+            };
             let blob = new Blob([JSON.stringify(json)], {
                 type: 'application/json'
             });
@@ -115,7 +117,7 @@
                 onProgress: UnityProgress,
                 url: blobUrl,
                 Module: {
-                    onRuntimeInitialized: function () {
+                    onRuntimeInitialized: function() {
                         resizeUnityContainer();
                         document.querySelector("#loading-text").remove();
                     }
@@ -127,7 +129,7 @@
 
 <body>
     <div class="webgl-content">
-      <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
+        <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
         <div id="unityContainer"></div>
     </div>
 </body>
