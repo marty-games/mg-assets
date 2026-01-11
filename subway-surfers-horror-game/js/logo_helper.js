@@ -29,12 +29,12 @@
     // Функция для создания UTM-параметров
     function generateUTMParams() {
         const trafficSource = getTrafficSource();
-        const isOwnDomain = ["igru.net", "igru.com.ua", "8games.net", "1gry.pl"].includes(trafficSource);
+        const isOwnDomain = ["igru.net", "igru.com.ua", "8games.net", "1gry.pl", "marty-games.github.io", "github.io"].includes(trafficSource);
         const isInIframe = window.self !== window.top;
         const params = new URLSearchParams();
-        
+
         params.set('utm_source', 'logo_link');
-        
+
         if (isInIframe && isOwnDomain) {
             params.set('utm_medium', 'iframe_own');
         } else if (isInIframe) {
@@ -42,11 +42,11 @@
         } else {
             params.set('utm_medium', 'direct');
         }
-        
+
         if (trafficSource) {
             params.set('utm_campaign', trafficSource);
         }
-        
+
         return params.toString();
     }
 
@@ -69,22 +69,22 @@
         sheet.innerHTML = style;
         document.body.appendChild(sheet);
         const wrapperLogo = document.createElement('div');
-        
-        let lang  = (navigator.language || navigator.userLanguage).slice(0, 2);
+
+        let lang = (navigator.language || navigator.userLanguage).slice(0, 2);
         let currentLogo = '';
-        
+
         document.referrer.includes(atob("OGdhbWVzLm5ldA==")) && (lang = 'gm');
         document.referrer.includes(atob("aWdydS5uZXQ=")) && (lang = 'vse');
-        
-        ((lang === 'en' || lang === 'gm') && lang !== 'vse') ? currentLogo = gm['size_' + size] : currentLogo = vse['size_' + size];
-        
+
+        ((lang === 'en' || lang === 'gm') && lang !== 'vse') ? currentLogo = gm['size_' + size]: currentLogo = vse['size_' + size];
+
         // Генерируем UTM-параметры и добавляем их в ссылку
         const utmParams = generateUTMParams();
         currentLogo = currentLogo.replace('{{UTM}}', '?' + utmParams);
-        
+
         wrapperLogo.innerHTML = currentLogo;
         document.body.appendChild(wrapperLogo);
-        
+
         typeof position != 'undefined' && (css(document.getElementById('our_logo'), position));
     };
 
