@@ -29,7 +29,7 @@
     // Функция для создания UTM-параметров
     function generateUTMParams() {
         const trafficSource = getTrafficSource();
-        const isOwnDomain = ["igru.net", "igru.com.ua", "8games.net", "1gry.pl", "marty-games.github.io", "github.io"].includes(trafficSource);
+        const isOwnDomain = ["igru.net", "igru.com.ua", "8games.net", "1gry.pl", "marty-games.github.io", "github.io", "cdn.jsdelivr.net", "jsdelivr.net"].includes(trafficSource);
         const isInIframe = window.self !== window.top;
         const params = new URLSearchParams();
 
